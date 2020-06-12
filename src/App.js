@@ -1,11 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./components/pages/About";
 import Contacts from "./components/contacts/Contacts";
 import AddContacts from "./components/contacts/AddContacts";
+import EditContacts from "./components/contacts/EditContacts";
 import Header from "./components/layouts/Header";
 import { Provider } from "./context";
 import Notfound from "./components/pages/NotFound";
+import Test from "./components/test/Test";
 
 function App() {
   return (
@@ -16,7 +18,8 @@ function App() {
           <Switch>
             <Route exact path="/" component={Contacts} />
             <Route exact path="/add" component={AddContacts} />
-
+            <Route exact path="/edit/:id" component={EditContacts} />
+            <Route exact path="/test" component={Test} />
             <Route exact path="/about" component={About} />
             <Route component={Notfound} />
           </Switch>
